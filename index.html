@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'none'; img-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'">
+<title>MAOU STYLE GACHA 24 | ChatGPT画像ガチャ</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#0c1020;color:#edf0ff;--panel:#171d31;--panel2:#202942;--line:#364362;--muted:#b4bfd5;--accent:#b49aff;--accent-bg:#43366b;--focus:#f5d38e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:280px;background:radial-gradient(ellipse at top,#262040 0%,#0c1020 55%);min-height:100vh}
+main{max-width:1080px;margin:0 auto;padding:24px 18px 80px}header{margin-bottom:24px}.eyebrow{color:#c6b2ff;font-size:.83rem;font-weight:800;letter-spacing:.15em;margin:0 0 10px}h1{font-size:clamp(1.75rem,5vw,2.65rem);line-height:1.2;margin:0 0 10px}h2{font-size:1.18rem;margin:0}p{line-height:1.7}header p{color:var(--muted);margin:8px 0 0;max-width:850px}
+.step{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:22px;margin-top:17px;box-shadow:0 7px 24px #0002}.stephead{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:13px}.stepnum{display:inline-grid;place-items:center;border:1px solid #7666af;background:#392d61;color:#eee1ff;border-radius:9px;width:32px;height:32px;margin-right:9px;font-size:1rem;font-weight:800}.muted{color:var(--muted);font-size:.91rem}.step p{margin:4px 0 14px}
+.warning{border-left:4px solid #e4b365;background:#27253a;padding:15px 17px;border-radius:0 12px 12px 0;margin-top:18px}.warning summary{font-weight:800;cursor:pointer}.warning p{color:#e5def1;margin:8px 0 0;font-size:.9rem}.warning strong{color:#ffe2ab}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:12px 0 16px}.actions{display:flex;gap:8px;flex-wrap:wrap}.count{font-variant-numeric:tabular-nums;color:#dbc8ff;font-weight:800}
+button{font:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:3px}button:disabled{opacity:.45;cursor:not-allowed}
+.action{border-radius:10px;border:1px solid #7180a2;padding:10px 13px;color:#f8f8ff;background:var(--panel2);font-size:.9rem;font-weight:650}.action:hover:not(:disabled){background:#384565}.primary{background:#7555c8;color:white;border-color:#9c7cf4}.primary:hover:not(:disabled){background:#8463da}
+textarea::placeholder{color:#9daac5}
+.group{margin:16px 0 0}.groupname{color:#c4cae3;font-size:.85rem;font-weight:800;margin:0 0 9px}.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.tile{width:100%;min-width:0;background:#1d2640;border:1px solid #485773;border-radius:12px;padding:13px 9px;text-align:left;color:#edf1ff;min-height:76px}.tile:hover{border-color:#b59bea;background:#293458}.tile[aria-pressed="true"]{background:var(--accent-bg);border:2px solid var(--accent);padding:12px 8px}.tile .jp{display:block;font-size:.98rem;font-weight:800}.tile .en{display:block;font-size:.81rem;color:#b3c3dd;margin-top:5px;overflow-wrap:anywhere}.tile[aria-pressed="true"] .en{color:#eadfff}.tile .tick{float:right;color:#d2f8d9;font-weight:800}.empty{color:var(--muted)}
+.selectedlabel{margin-top:18px;color:#c2cce3;font-size:.85rem;font-weight:750}.chips{display:flex;gap:7px;flex-wrap:wrap;min-height:20px;margin-top:9px}.chip{background:#2b3758;border:1px solid #5c6892;padding:6px 9px;border-radius:18px;color:#edebff;font-size:.83rem}.chip:hover{background:#403c65}
+textarea{font:inherit;line-height:1.6;width:100%;border:1px solid #6d7998;border-radius:12px;background:#0e1527;color:#f4f6ff;padding:14px;resize:vertical;min-height:112px}.hint{font-size:.85rem;color:var(--muted);margin:8px 0 0}.tiny{font-size:.78rem;color:var(--muted)}
+fieldset{border:0;padding:0;margin:0 0 14px}legend{font-weight:800;margin-bottom:9px}.radios{display:flex;gap:9px;flex-wrap:wrap}.radio{display:flex;align-items:center;gap:7px;background:#242d47;border:1px solid #495875;border-radius:10px;padding:10px 12px;cursor:pointer}.radio:has(input:checked){border-color:#c1a6ff;background:#43366b}.radio input{accent-color:#bea2ff;width:16px;height:16px}
+.output{width:100%;min-height:105px;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.94rem;line-height:1.7;background:#0a1020;border:1px solid #526184;border-radius:12px;padding:14px;color:#f3efff;resize:vertical}.bottomactions{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:12px 0 0}.status{font-size:.87rem;color:#ccf1cf;min-height:1.3em}.footer{color:#aab8d4;font-size:.84rem;margin:24px 0;text-align:center}.footer p{margin:5px 0}.footer a,.article a{color:#dbcaff;text-underline-offset:3px}.article{border:1px solid var(--line);background:var(--panel);padding:17px 20px;margin-top:18px;border-radius:15px}.article h2{margin-bottom:8px}.article p{margin:7px 0}.hidden{display:none!important}
+@media(max-width:760px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.step{padding:16px}}
+@media(max-width:480px){main{padding:17px 11px 45px}.tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.tile{min-height:73px}.action{padding:9px 10px}.bottomactions .primary{flex:1}.radio{flex:1;min-width:120px}.warning{padding:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">MAOU WORKSHOP / PROMPTS</p>
+    <h1>🎰 MAOU STYLE GACHA <span style="white-space:nowrap">24</span></h1>
+    <p>日本語でポチポチ選んで、ChatGPTへコピペ。コマンドだけでも、日本語でお願いを足してもOK。全部盛りの闇鍋も歓迎！ 😈</p>
+    <details class="warning" open>
+      <summary>⚠️ ご利用前に（非公式ツール）</summary>
+      <p>これはChatGPTの画像生成で遊ぶための<strong>非公式スタイルキーワードメーカー</strong>です。<strong>「/comic」「/anime」などは、ChatGPTの公式画像生成コマンドではありません。</strong> 結果は会話の流れやモデルによって変わり、スタイルが混ざる・無視されることもあります。何が出るかはお楽しみ！</p>
+      <p>本ツールはOpenAIの公式製品ではなく、OpenAIによる承認や提携を示すものではありません。画像生成やChatGPTへの自動送信は行いません。</p>
+    </details>
+  </header>
+
+  <section class="step" aria-labelledby="pick-title">
+    <div class="stephead"><h2 id="pick-title"><span class="stepnum">1</span>好きなだけ選ぼう</h2><span class="count" id="count" aria-live="polite">0 / 24 選択中</span></div>
+    <p class="muted">一度押すと選択、もう一度押すと解除。選択数に上限はありません。</p>
+    <div class="toolbar">
+      <div class="actions">
+        <button id="all" type="button" class="action">☑ 全部選択</button>
+        <button id="clear" type="button" class="action">✕ 全解除</button>
+        <button id="random" type="button" class="action">🎲 おまかせ3つ</button>
+      </div>
+    </div>
+    <div id="groups"></div>
+    <div class="selectedlabel">選択したスタイル（クリックで解除）</div>
+    <div id="chips" class="chips"><span class="muted">まだ選択されていません</span></div>
+  </section>
+
+  <section class="step" aria-labelledby="extra-title">
+    <div class="stephead"><h2 id="extra-title"><span class="stepnum">2</span>追加のお願い（任意）</h2><span id="charcount" class="tiny">0 / 2000文字</span></div>
+    <label for="extra" class="muted">コマンドの後に付けたいことがあれば、気軽に書いてね。空欄でもOK！</label>
+    <textarea id="extra" maxlength="2000" placeholder="例：添付したちびレイを、コインランドリーでライブ演奏させて！"></textarea>
+    <p class="hint">画像を使いたいときは、ChatGPT側で画像を添付してね。入力した文章や選択内容は、このツールから外部送信・自動保存しません。</p>
+  </section>
+
+  <section class="step" aria-labelledby="out-title">
+    <div class="stephead"><h2 id="out-title"><span class="stepnum">3</span>コピーしてガチャを回そう</h2></div>
+    <fieldset>
+      <legend>出力の書き方</legend>
+      <div class="radios">
+        <label class="radio"><input type="radio" name="mode" value="slash" checked> /スラッシュ</label>
+        <label class="radio"><input type="radio" name="mode" value="words"> 英単語</label>
+        <label class="radio"><input type="radio" name="mode" value="sentence"> 英文</label>
+      </div>
+    </fieldset>
+    <label for="output" class="muted">できあがり（ここから手動コピーもできます）</label>
+    <textarea id="output" class="output" readonly placeholder="スタイルを選ぶか、追加のお願いを書いてね"></textarea>
+    <div class="bottomactions">
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <button id="copy" type="button" class="action primary" disabled>📋 コピーする</button>
+    </div>
+  </section>
+  <section id="article" class="article hidden" aria-labelledby="articleTitle">
+    <h2 id="articleTitle">📖 このツール、なんで作ったの？</h2>
+    <p>制作の裏話や画像ガチャの結果は、noteの記事で紹介しています。</p>
+    <p><a id="articleLink" href="#" rel="noopener noreferrer" target="_blank">制作記事を読む（note）</a></p>
+    <p>💬 感想・不具合・「こんな画像ができた！」などは、記事のコメント欄へどうぞ。</p>
+  </section>
+  <footer class="footer">
+    <p>このツールは無料です。ChatGPT側のプラン・画像生成の利用制限や料金は別です。</p>
+    <p>入力内容は自動保存・外部送信しません。コピーした内容をChatGPTに送信した後は、ChatGPT側の利用条件が適用されます。公開サーバーにはアクセスログが残る場合があります。</p>
+    <p>MAOU STYLE GACHA 24 v1.1 · Gloaming Solutions · 2026-10-08</p>
+  </footer>
+</main>
+<script>
+(()=>{
+  'use strict';
+  const styles = [
+    {id:'editorial',jp:'雑誌風',group:'写真・広告'},
+    {id:'luxury',jp:'高級広告',group:'写真・広告'},
+    {id:'goldenhour',jp:'夕暮れ光',group:'写真・広告'},
+    {id:'cinematic',jp:'映画風',group:'写真・広告'},
+    {id:'portrait',jp:'人物写真',group:'写真・広告'},
+    {id:'selfie',jp:'自撮り',group:'写真・広告'},
+    {id:'street',jp:'街角スナップ',group:'写真・広告'},
+    {id:'fashion',jp:'ファッション',group:'写真・広告'},
+    {id:'product',jp:'商品広告',group:'シーン・構成'},
+    {id:'food',jp:'食べ物',group:'シーン・構成'},
+    {id:'workspace',jp:'作業机',group:'シーン・構成'},
+    {id:'minimal',jp:'ミニマル',group:'シーン・構成'},
+    {id:'vintage',jp:'ヴィンテージ',group:'雰囲気・光'},
+    {id:'retro',jp:'レトロ',group:'雰囲気・光'},
+    {id:'neon',jp:'ネオン',group:'雰囲気・光'},
+    {id:'fantasy',jp:'幻想的',group:'雰囲気・光'},
+    {id:'comic',jp:'漫画',group:'イラスト・表現'},
+    {id:'sketch',jp:'スケッチ',group:'イラスト・表現'},
+    {id:'watercolor',jp:'水彩画',group:'イラスト・表現'},
+    {id:'anime',jp:'アニメ',group:'イラスト・表現'},
+    {id:'pixelart',jp:'ドット絵',group:'イラスト・表現'},
+    {id:'sticker',jp:'ステッカー',group:'イラスト・表現'},
+    {id:'infographic',jp:'図解',group:'イラスト・表現'},
+    {id:'beforeafter',jp:'比較画像',group:'イラスト・表現'}
+  ];
+  // note記事を公開したらURLを設定。空欄の間は記事案内を表示しない。
+  const ARTICLE_URL = '';
+  const $ = id => document.getElementById(id);
+  if(ARTICLE_URL){
+    try{
+      const articleUrl=new URL(ARTICLE_URL);
+      if(articleUrl.protocol==='https:' && articleUrl.hostname==='note.com'){
+        $('articleLink').href=articleUrl.href;
+        $('article').classList.remove('hidden');
+      }
+    }catch(_){/* 不正なURLは無視 */}
+  }
+  const byId = new Map(styles.map(s=>[s.id,s]));
+  let chosen = new Set();
+  const groups = [...new Set(styles.map(s=>s.group))];
+  const findMode=()=>document.querySelector('input[name="mode"]:checked').value;
+  function makeOutput(){
+    const items = styles.filter(s=>chosen.has(s.id)).map(s=>s.id);
+    const format = findMode();
+    let head = '';
+    if(items.length){
+      if(format === 'words') head = items.join(', ');
+      else if(format === 'sentence') head = 'Create an image using these style ideas: '+items.join(', ')+'.';
+      else head = items.map(id=>'/'+id).join(' ');
+    }
+    const note = $('extra').value.trim();
+    return [head,note].filter(Boolean).join('\n\n');
+  }
+  function updateOutput(){
+    const out=makeOutput();
+    $('output').value=out;
+    $('copy').disabled=!out;
+    $('count').textContent=chosen.size+' / '+styles.length+' 選択中';
+    $('charcount').textContent=Array.from($('extra').value).length+' / 2000文字';
+    $('status').textContent='';
+  }
+  function makeButton(style){
+    const b=document.createElement('button');
+    b.type='button';b.className='tile';b.dataset.id=style.id;
+    b.setAttribute('aria-pressed',String(chosen.has(style.id)));
+    b.setAttribute('aria-label',style.jp+' /'+style.id);
+    const jp=document.createElement('span');jp.className='jp';jp.textContent=style.jp;
+    const en=document.createElement('span');en.className='en';en.textContent='/'+style.id;
+    b.append(jp,en);
+    b.addEventListener('click',()=>{toggle(style.id);});
+    return b;
+  }
+  function renderTiles(){
+    const root=$('groups');root.replaceChildren();
+    for(const group of groups){
+      const section=document.createElement('div');section.className='group';
+      const h=document.createElement('p');h.className='groupname';h.textContent=group;
+      const grid=document.createElement('div');grid.className='tiles';
+      for(const s of styles.filter(s=>s.group===group))grid.append(makeButton(s));
+      section.append(h,grid);root.append(section);
+    }
+  }
+  function updateSelection(){
+    document.querySelectorAll('.tile').forEach(b=>b.setAttribute('aria-pressed',String(chosen.has(b.dataset.id))));
+    const list=$('chips');list.replaceChildren();
+    if(!chosen.size){const span=document.createElement('span');span.className='muted';span.textContent='まだ選択されていません';list.append(span);}
+    else for(const s of styles.filter(s=>chosen.has(s.id))){
+      const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=s.jp+' ×';b.setAttribute('aria-label',s.jp+'を選択解除');
+      b.addEventListener('click',()=>toggle(s.id));list.append(b);
+    }
+    updateOutput();
+  }
+  function toggle(id){if(chosen.has(id))chosen.delete(id);else if(byId.has(id))chosen.add(id);updateSelection();}
+  function randomThree(){
+    const arr=styles.map(s=>s.id);
+    for(let i=arr.length-1;i>0;i--){
+      let r;
+      if(typeof crypto!=='undefined'&&crypto.getRandomValues){const v=new Uint32Array(1);crypto.getRandomValues(v);r=v[0]/4294967296;}
+      else r=Math.random();
+      const j=Math.floor(r*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];
+    }
+    chosen=new Set(arr.slice(0,3));updateSelection();
+  }
+  $('all').addEventListener('click',()=>{chosen=new Set(styles.map(s=>s.id));updateSelection();});
+  $('clear').addEventListener('click',()=>{chosen.clear();updateSelection();});
+  $('random').addEventListener('click',randomThree);
+  $('extra').addEventListener('input',updateOutput);
+  document.querySelectorAll('input[name="mode"]').forEach(r=>r.addEventListener('change',updateOutput));
+  $('copy').addEventListener('click',async()=>{
+    const value=makeOutput();if(!value)return;
+    try{
+      if(!navigator.clipboard?.writeText)throw Error('unsupported');
+      await navigator.clipboard.writeText(value);
+      $('status').textContent='コピーしたで！ ChatGPTに貼り付けてね。';
+    }catch(_){
+      const box=$('output');box.focus();box.select();
+      let worked=false;
+      try{worked=document.execCommand('copy');}catch(_){/* no permission */}
+      $('status').textContent=worked?'コピーしたで！ ChatGPTに貼り付けてね。':'自動コピーできなかったので、選択済みの文章を Ctrl+C（Macは⌘C）でコピーしてね。';
+    }
+  });
+  renderTiles();updateSelection();
+})();
+</script>
+</body>
+</html>
